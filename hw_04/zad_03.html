@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+<script>
+    const userAge = prompt("Скільки тобі років?")
+    if (userAge === null) {
+        alert(`Шкода, що Ви не захотіли ввести свій вік`)
+    } else {
+        const userCity = prompt("З якого ти міста")
+        if (userCity === null) {
+            alert(`Шкода, що Ви не захотіли ввести своє місто`)
+        } else {
+            const userSportType = prompt("Який твій улюблений вид спорту")
+            if (userSportType === null) {
+                alert(`Шкода, що Ви не захотіли ввести свій улюблений тип спорту`)
+            } else {
+                if (userCity === 'Київ' || userCity === 'Вашингтон' || userCity ==='Лондон') {
+                    if (userSportType === 'Бокс') {
+                        alert(`Твій вік ${userAge}\n Ти живеш у столиці ${userCity}\n ${userSportType} - це круто! Хочеш стати Майк Тайсон?`)
+                    } else if (userSportType === 'Футбол') {
+                        alert(`Твій вік ${userAge} \n Ти живеш у столиці ${userCity}\n ${userSportType} - це круто! Хочеш стати Лионель Мессі?`)
+                    } else if (userSportType === 'Теніс') {
+                        alert(`Твій вік ${userAge} \n Ти живеш у столиці ${userCity}\n ${userSportType} - це круто! Хочеш стати Рафаэль Надаль?`)
+                    } else {
+                        alert(`Твій вік ${userAge} \n Ти живеш у столиці ${userCity}\n ${userSportType} - це круто! `)
+                    }
+                }
+                else {
+                    if (userSportType === 'Бокс') {
+                        alert(`Твій вік ${userAge}\n Ти живеш у місті ${userCity}\n ${userSportType} - це круто! Хочеш стати як Майк Тайсон?`)
+                    } else if (userSportType === 'Футбол') {
+                        alert(`Твій вік ${userAge}\n Ти живеш у місті ${userCity}
+                            ${userSportType} - це круто! Хочеш стати як Лионель Мессі? `)
+                    } else if (userSportType === 'Теніс') {
+                        alert(`Твій вік ${userAge}\n Ти живеш у місті ${userCity}\n ${userSportType} - це круто! Хочеш стати як Рафаэль Надаль`)
+                    } else {
+                        alert(`Твій вік ${userAge}\n Ти живеш у місті ${userCity}\n ${userSportType} - це круто! `)
+                    }
+                }
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <script>
+        const num = prompt(`Введи 3х значне число`)
+        const num1 = Math.trunc(num/100)
+        const num3 = num % 10
+        const num2 = (num - num3) % 100 / 10
+
+        if(num1 === num2 && num2 === num3){
+            alert(`${num1} = ${num2} = ${num3}, всі рівні !`)
+        }
+        else if(num1 === num2 || num1 === num3 || num2 === num3){
+            alert(`${num1}, ${num2}, ${num3}, є 2 рівних числа !`)
+            if(num1 === num2){
+                alert(`${num1} = ${num2}, рівні числа !`)
+            }
+            else if (num1 === num3){
+                alert(`${num1} = ${num3}, рівні числа !`)
+            }
+            else {
+                alert(`${num3} = ${num2}, рівні числа !`)
+            }
+        }
+        else {
+            alert(`${num1}, ${num2}, ${num3}, всі числа різні !`)
+        }
+    </script>
+</body>
+</html>
