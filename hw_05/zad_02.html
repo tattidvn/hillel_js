@@ -8,11 +8,15 @@
 </head>
 <body>
   <script>
-    let strDollar = ''
-    for(let i = 0; i<= 100; i += 10){
-      i === 100 ? strDollar += i :strDollar += `${i * 26}, `
+    // let strDollar = ''
+    const Dollar = 26
+    // for(let i = 0; i<= 100; i += 10){
+    //   i === 100 ? strDollar += i * Dollar :strDollar += `${i * Dollar}, `
+    // }
+    // console.log(strDollar)
+    for (let i = 0; i <= 100; i+=10){
+        console.log(i*Dollar)
     }
-    console.log(strDollar)
   </script>
 </body>
 </html>
