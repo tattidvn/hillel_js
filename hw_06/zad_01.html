@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <script>
+        const user = {
+            name: 'Max',
+            age: 25,
+            country: 'Ukraine',
+            city: 'Lviv',
+            mail: 'mail@gmail.com',
+            phoneNumber: 123456789,
+            job: 'Manager',
+            readUser() {
+                console.log(`Hi, my name is ${user["name"]}, Im ${user["age"]} Im from ${user['country']}, ${user['city']}, I work as a ${user['job']}`)
+            },
+            userContact() {
+                console.log(`Hi, Im ${user["name"]}, here are my contacts: ${user["phoneNumber"]}, ${user["mail"]}`)
+            }
+        }
+        user.readUser()
+        user.userContact()
+    </script>
+</body>
+</html>

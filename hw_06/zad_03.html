@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <script>
+        const myContacts = {
+            myName: 'Tanya',
+            myPhoneNumber: 3801234589,
+            myMail: 'tanyamail$mail.com',
+            contacts: [
+                {
+                    name: 'Anna',
+                    phoneNumber: 111222333,
+                    mail: 'anna@gmail.com'
+                },
+                {
+                    name: 'Kate',
+                    phoneNumber: 444555666,
+                    mail: 'kate@gmail.com'
+                },
+                {
+                    name: 'Max',
+                    phoneNumber: 777888999,
+                    mail: 'max@gmail.com'
+                },
+                {
+                    name: 'Tom',
+                    phoneNumber: 123456789,
+                    mail: 'tom@Gmail.com'
+                }
+            ],
+        search(){
+            const findContact = prompt('Person name')
+            let findPerson = false
+            for(let i of myContacts.contacts){
+                if(i["name"] === findContact){
+                    findPerson = true
+                    alert(`Person ${i['name']}, num: ${i['phoneNumber']}, mail: ${i['mail']}`)
+                    break;
+                }
+            }
+            if (findPerson === false)
+                alert(`there is no contact with name ${findContact}`)
+            },
+        addPerson(){
+                const personName = prompt('Name: ')
+                const personPhNumber = +prompt('Phone number: ')
+                const personEmail = prompt('Person Email: ')
+                myContacts.contacts.push({name: personName, phoneNumber: personPhNumber, mail: personEmail })
+            }
+        }
+        myContacts.addPerson()
+        myContacts.search()
+    </script>
+</body>
+</html>
