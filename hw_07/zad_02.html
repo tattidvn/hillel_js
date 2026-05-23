@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+<script>
+    const m = [2, 8, 'sdgs', [], 6, 2, 'f', 'qwer']
+    function func(mass) {
+        let summa = 0
+        let len = 0
+        for(let i = 0; i < mass.length; i++){
+            if(typeof mass[i] ==='number'){
+                summa +=mass[i]
+                len++
+            }
+        }
+        return summa / len
+    }
+    let res = func(m)
+    alert(res)
+</script>
+</body>
+</html>

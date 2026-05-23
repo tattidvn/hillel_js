@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <script>
+        const phrase = prompt('Ваш текст')
+        const letters = prompt('Букви ').split("")
+        function func(word, lettersList){
+            let newWord = ""
+            for( let i = 0; i < word.length; i++){
+                let inLetters = false
+                for(let j = 0; j < lettersList.length; j++){
+                    if (word[i] === lettersList[j]){
+                        inLetters = true;
+                        break;
+                    }
+                }
+                inLetters ? newWord += "" : newWord += word[i]
+            }
+            return newWord
+        }
+        alert(func(phrase, letters))
+    </script>
+</body>
+</html>

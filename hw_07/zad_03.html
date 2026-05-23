@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+<script>
+  const array = [1, 3, 4, 6, 2, 5, 7]
+  function func(massyv, elem){
+    let newArray = []
+    for(let i in massyv){
+      massyv[i] !== elem ? newArray.push(massyv[i]) : newArray
+    }
+    return newArray
+  }
+  console.log(func(array, 5))
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+<script>
+  function askUser(callback) {
+    for(let i = 0; i < 10; i++){
+      let num = prompt('номер < 100')
+      if(callback(num) || i === 9){
+        alert(`ваш текст : ${num}`)
+        break
+      }
+    }
+  }
+  function checkRes(n){
+    if(Number.isNaN(+n) || +n > 100){
+      return true
+    }
+  }
+  askUser(checkRes)
+</script>
+</body>
+</html>
