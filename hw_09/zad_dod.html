@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+<script>
+    const dashboard1 = {
+        title: "Dashboard opened",
+
+        open() {
+            console.log(this.title);
+        }
+    };
+
+    setTimeout(dashboard1.open.bind(dashboard1), 1000);
+
+    // const dashboard2 = {
+    //     title: "Dashboard opened",
+    //
+    //     open() {
+    //         console.log(this.title);
+    //     }
+    // };
+    //
+    // setTimeout(dashboard2.open.call(dashboard2), 1000) знаю що через call / apply але не знаю як написати )))
+</script>
+</body>
+</html>
