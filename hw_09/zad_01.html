@@ -11,16 +11,19 @@
     let ladder = {
         level: 0,
         up(){
-            return this.level++
+            this.level++
+            return this
         },
         down(){
-            return this.level--
+            this.level--
+            return this
         },
         showStep(){
-            return console.log(this.level)
+            console.log(this.level)
+            return this
         }
     }
-    ladder.up().down().up().down().up().up().showStep()
+    ladder.up().down().up().down().up().up().showStep().up().showStep()
 </script>
 </body>
 </html>
