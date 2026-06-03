@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+<div>
+    <table class="pifTable"></table>
+</div>
+<script>
+    const mainTable = document.querySelector('.pifTable')
+    for(let i = 1; i <= 10; i++){
+        let tRow = document.createElement('tr')
+        for (let j = 1; j <= 10; j++) {
+            let tData = document.createElement('td')
+            tRow.append(tData)
+            tData.style.border = '2px solid black'
+            tData.innerText = i * j
+        }
+        mainTable.appendChild(tRow)
+    }
+</script>
+</body>
+</html>

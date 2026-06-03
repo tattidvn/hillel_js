@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+  <button>Random cat</button>
+  <img/>
+<script>
+  const btnChange = document.querySelector("button")
+  const imgChange = document.querySelector("img")
+  btnChange.style.display = 'block'
+  imgChange.style.width = '200px'
+  btnChange.addEventListener('click', randomImg)
+  const imgMass = ['images/1.jpg', "images/2.jpg", "images/3.jpg", "images/4.jpg", "images/5.jpg", "images/6.jpg", "images/7.jpg", "images/8.jpg", "images/9.jpg", "images/10.jpg"]
+  function randomImg () {
+    const catImg = Math.trunc(Math.random() * imgMass.length)
+    imgChange.setAttribute('src', imgMass[catImg])
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+  <button>click me</button>
+<script>
+  const text = document.querySelector("p")
+  const butt = document.querySelector("button")
+  butt.addEventListener('click', color)
+  function color () {
+    if(text.style.color === 'blue'){
+      text.style.color = ''
+    }
+    else {
+      text.style.color = 'blue'
+    }
+  }
+</script>
+</body>
+</html>

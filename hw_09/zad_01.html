@@ -8,22 +8,19 @@
 </head>
 <body>
 <script>
-    let ladder = {
-        level: 0,
-        up(){
-            this.level++
-            return this
-        },
-        down(){
-            this.level--
-            return this
-        },
-        showStep(){
-            console.log(this.level)
-            return this
+    const funreq = (n) => {
+
+        if(n === 1 || n === 0){
+            return 1
         }
+        else{
+            const res = funreq(n - 1) + ( funreq( n - 2))
+            console.log(res)
+            return res
+        }
+
     }
-    ladder.up().down().up().down().up().up().showStep().up().showStep()
+    console.log(funreq(5))
 </script>
 </body>
 </html>
