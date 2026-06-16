@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div></div>
+<script>
+    const btn1 = document.createElement('button')
+    const btn2 = document.createElement('button')
+    const btn3 = document.createElement('button')
+    btn1.textContent = 'click 1'
+    btn2.textContent = 'click 2'
+    btn3.textContent = 'click 3'
+    const mainDiv = document.querySelector('div')
+    mainDiv.append(btn1, btn2, btn3)
+    mainDiv.style.display = 'flex'
+    mainDiv.style.gap = '5px'
+    const showBtn = (event) => {
+        // if(event.target === btn1){
+        //     alert(btn1.textContent)
+        // }
+        // else if (event.target === btn2){
+        //     alert(btn2.textContent)
+        // }
+        // else {
+        //     alert(btn3.textContent)
+        // }
+        if(event.target.tagName === 'BUTTON'){
+            alert(event.target.textContent) // упростила if/else
+        }
+    }
+    mainDiv.addEventListener('click', showBtn)
+</script>
+</body>
+</html>

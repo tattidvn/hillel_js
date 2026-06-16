@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+<div>
+    <button>click 1</button>
+    <button>click 2</button>
+</div>
+<script>
+    const btn1 = document.querySelector("button:nth-child(1)")
+    const btn2 = document.querySelector('button:nth-child(2)')
+    let userLink
+    const askLink = () => {
+        userLink = prompt('your link: ')
+    }
+    const openLink = () => {
+        location.href = (userLink)
+        setTimeout(() => {
+            history.back()
+        }, 5000)
+    }
+
+    btn1.addEventListener( 'click', askLink)
+    btn2.addEventListener('click', openLink)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+<div>
+  <ul style="display: flex; flex-direction: column; gap: 5px "></ul>
+  <input type="text" placeholder="Завдання: ">
+  <button class="addButton">Додати</button>
+  <script>
+    const tasksList = document.querySelector('ul')
+    const addBtn = document.querySelector('.addButton')
+    const newTask = document.querySelector('input')
+
+    const addFunc = () => {
+      if(newTask.value === ''){
+        alert('Напиши завдання')
+      }
+      else {
+        const myLi = document.createElement('li')
+        myLi.textContent = newTask.value + ' '
+        tasksList.append(myLi)
+        const delBtn = document.createElement('button')
+        delBtn.textContent = 'Видалити'
+        myLi.append(delBtn)
+        newTask.value = ''
+      }
+    }
+    const delFunc = (event) => {
+      if(event.target.tagName === 'BUTTON'){
+        event.target.parentElement.remove()
+      }
+    }
+    addBtn.addEventListener('click', addFunc)
+    tasksList.addEventListener('click', delFunc)
+  </script>
+</div>
+</body>
+</html>
