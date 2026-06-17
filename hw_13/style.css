@@ -1,0 +1,57 @@
+body .container {
+  background-color: #efeded;
+  margin: auto;
+  max-width: 450px;
+  border-radius: 10px;
+}
+body .container .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  gap: 15px;
+  text-align: center;
+}
+body .container .form h1 {
+  color: deeppink;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body .container .form .errorText {
+  color: red;
+  bottom: 10px;
+  font-size: small;
+  position: relative;
+}
+body .container .form .textField {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+body .container .form textarea {
+  resize: vertical;
+  height: 50px;
+  margin-bottom: 10px;
+}
+body .container .form span {
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  align-self: start;
+}
+body .container .form .send_btn {
+  border: none;
+  border-radius: 10px;
+  background-color: dodgerblue;
+  cursor: pointer;
+  padding: 10px;
+  display: block;
+  width: 90%;
+  align-self: center;
+  box-shadow: 0 2px 15px dodgerblue;
+}
+body .container .form .send_btn span {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

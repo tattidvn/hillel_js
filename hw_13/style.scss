@@ -1,0 +1,64 @@
+body {
+  .container{
+    background-color: #efeded;
+    margin: auto;
+    max-width: 450px;
+    border-radius: 10px;
+
+    .form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      gap: 15px;
+      text-align: center;
+
+      h1{
+        color: deeppink;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .errorText{
+        color: red;
+        bottom: 10px;
+        font-size: small;
+        position: relative;
+      }
+
+      .textField {
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+      }
+      textarea{
+        resize: vertical;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+
+      span{
+        color: gray;
+        font-family: Arial, Helvetica, sans-serif;
+        align-self: start;
+      }
+
+      .send_btn{
+        border: none;
+        border-radius: 10px;
+        background-color: dodgerblue;
+        cursor: pointer;
+        padding: 10px;
+        display: block;
+        width: 90%;
+        align-self: center;
+        box-shadow: 0 2px 15px dodgerblue;
+
+        span{
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          margin: 20px;
+        }
+      }
+    }
+  }
+}

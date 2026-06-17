@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class=container>
+    <form class="form" action="" method="post">
+        <h1>We would like to help you</h1>
+        <input class="textField" id="name" type="text" name="user_name" placeholder="Name" >
+        <span class="errorText"></span>
+        <textarea class="textField" id="message" name="user_message" placeholder="Message"></textarea>
+        <span class="errorText"></span>
+        <span>How to answer you?</span>
+        <input class="textField" id="phone" type="tel" name="user_tel" placeholder="Phone number" required>
+        <span class="errorText"></span>
+        <input class="textField" id="email" type="email" placeholder="Email" name="user_email">
+        <span class="errorText"></span>
+        <button class="send_btn" type="submit"><span>Send message</span></button>
+    </form>
+</div>
+<script>
+    const myForm = document.querySelector('form')
+    const errorMass = document.querySelectorAll('.errorText')
+    const formAction = (event) => {
+        if (event.target.id === 'name') {
+            event.target.value === ''? errorMass[0].textContent = 'Enter your name': errorMass[0].textContent = ''
+        }
+        else if (event.target.id === 'message') {
+            /[a-zA-Z]{5,}/.test(event.target.value)? errorMass[1].textContent = '': errorMass[1].textContent = 'Min 5'
+        }
+        else if (event.target.id === 'phone'){
+            /^\+380/.test(event.target.value)? errorMass[2].textContent = '': errorMass[2].textContent = 'Start with +380'
+        }
+        else if (event.target.id === 'email'){
+           if(!/@/.test(event.target.value)){
+               errorMass[3].textContent = 'Must contain @'
+           }
+           else if (!/\./.test(event.target.value)){
+               errorMass[3].textContent = 'Must contain .'
+           }
+           else {
+               errorMass[3].textContent = ''
+           }
+        }
+    }
+
+    const submitForm = (event) => {
+        event.preventDefault()
+        const data = new FormData(event.target)
+        for (let pair of data){
+            console.log(pair)
+        }
+    }
+    myForm.addEventListener('input', formAction)
+    myForm.addEventListener('submit', submitForm)
+</script>
+</body>
+</html>
