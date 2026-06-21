@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <a class="prev"> < </a>
+    <div class="img_slider">
+        <div class="change_slide">
+            <img src="images/img.png" alt="img1">
+            <img src="images/img_1.png" alt="img2">
+            <img src="images/img_2.png" alt="ing3">
+            <img src="images/img_3.png" alt="img4">
+            <img src="images/img_4.png" alt="img5">
+        </div>
+        <div class="dots_slider">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <a class="next"> > </a>
+</div>
+
+<script>
+    // Если currentIndex = 0 сдвиг 0px
+    // Если currentIndex = 1 сдвиг -500px (сдвигаем влево на ширину одного слайда)
+    // Формула : индекс * - ширину слайда
+    const btnNext = document.querySelector('.next');
+    const btnPrev = document.querySelector('.prev');
+    const slideWindow = document.querySelector('.change_slide');
+    const slides = document.querySelectorAll('img');
+    const dotSlider = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    const slideWidth = 500;
+    const twistSlider = () => {
+        let move = currentSlide * slideWidth;
+        slideWindow.style.transform = `translateX(-${move}px)`;
+    }
+
+    const twisterDotslider = () => {
+        for (let i = 0; i < dotSlider.length; i++) {
+            i === currentSlide? dotSlider[i].style.backgroundColor = 'dodgerblue': dotSlider[i].style.backgroundColor = 'gray'
+        }
+    }
+
+    const nextSlide = () => {
+        currentSlide++
+        if (currentSlide >= slides.length) {
+            currentSlide = slides.length - 1;
+        }
+        twistSlider()
+        twisterDotslider()
+    }
+
+    const prevSlide = () => {
+        currentSlide--
+        if(currentSlide < 0) {
+            currentSlide = 0;
+        }
+        twistSlider()
+        twisterDotslider()
+    }
+
+    btnNext.addEventListener('click', nextSlide)
+    btnPrev.addEventListener('click', prevSlide)
+
+</script>
+</body>
+</html>

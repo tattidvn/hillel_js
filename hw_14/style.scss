@@ -1,0 +1,62 @@
+.container{
+  margin: auto;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  height: 100vh;
+
+  .next,
+  .prev{
+    background-color: dodgerblue;
+    padding: 10px 14px;
+    border-radius: 25px;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 1s;
+  }
+  .next:hover,
+  .prev:hover{
+    background-color: blue;
+  }
+
+  .img_slider{
+    max-width: 500px;
+    overflow: hidden;
+
+    .change_slide{
+      display: flex;
+      transition: 1s;
+      margin-bottom: 10px;
+    }
+
+    img{
+      width: 500px;
+      flex-shrink: 0;
+      border-radius: 50px ;
+    }
+
+    .dots_slider{
+      max-width: 500px;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      display: flex;
+
+      .dot{
+        padding: 5px;
+        background-color: gray;
+        border-radius: 50%;
+      }
+      .dot:first-child{
+        background-color: dodgerblue;
+      }
+
+    }
+
+  }
+
+}
