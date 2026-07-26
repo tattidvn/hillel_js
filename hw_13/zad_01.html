@@ -9,9 +9,9 @@
 </head>
 <body>
 <div class=container>
-    <form class="form" action="" method="post">
+    <form class="form" action="" method="get">
         <h1>We would like to help you</h1>
-        <input class="textField" id="name" type="text" name="user_name" placeholder="Name" >
+        <input class="textField" id="name" type="text" name="user_name" placeholder="Name" required>
         <span class="errorText"></span>
         <textarea class="textField" id="message" name="user_message" placeholder="Message"></textarea>
         <span class="errorText"></span>
@@ -24,40 +24,80 @@
     </form>
 </div>
 <script>
-    const myForm = document.querySelector('form')
-    const errorMass = document.querySelectorAll('.errorText')
-    const formAction = (event) => {
-        if (event.target.id === 'name') {
-            event.target.value === ''? errorMass[0].textContent = 'Enter your name': errorMass[0].textContent = ''
+    const mainForm = document.querySelector('.form')
+    const fName = document.querySelector('#name')
+    const fEmail = document.querySelector('#email')
+    const fMessage = document.querySelector('#message')
+    const fPhone = document.querySelector('#phone')
+    const error = document.querySelectorAll('.errorText')
+    const checkName = () => {
+        if(fName.value.trim().length <= 5) {
+            error[0].textContent = 'min 5 characters long'
         }
-        else if (event.target.id === 'message') {
-            /[a-zA-Z]{5,}/.test(event.target.value)? errorMass[1].textContent = '': errorMass[1].textContent = 'Min 5'
-        }
-        else if (event.target.id === 'phone'){
-            /^\+380/.test(event.target.value)? errorMass[2].textContent = '': errorMass[2].textContent = 'Start with +380'
-        }
-        else if (event.target.id === 'email'){
-           if(!/@/.test(event.target.value)){
-               errorMass[3].textContent = 'Must contain @'
-           }
-           else if (!/\./.test(event.target.value)){
-               errorMass[3].textContent = 'Must contain .'
-           }
-           else {
-               errorMass[3].textContent = ''
-           }
+        else {
+            error[0].textContent = ''
         }
     }
 
-    const submitForm = (event) => {
-        event.preventDefault()
-        const data = new FormData(event.target)
-        for (let pair of data){
-            console.log(pair)
+    const checkEmail = () => {
+        const regex = /@gmail.com/
+        if (!regex.test(fEmail.value)) {
+            error[3].textContent = 'invalid email'
+        }
+        else error[3].textContent = ''
+    }
+
+    const checkMessage = () => {
+        if(fMessage.value.trim().length < 30) {
+            error[1].textContent= 'min 30 in message'
+        }
+        else {
+            error[1].textContent = ''
         }
     }
-    myForm.addEventListener('input', formAction)
-    myForm.addEventListener('submit', submitForm)
+
+    const checkPhone = () => {
+        const regex = /^\+380\d{9}$/
+        if (!regex.test(fPhone.value)){
+            error[2].textContent = 'invalid phone number'
+        }
+        else {
+            error[2].textContent = ''
+        }
+    }
+    const checkField = (e) => {
+        if (e.target === fName) {
+            checkName()
+        }
+        else if (e.target === fEmail) {
+            checkEmail()
+        }
+        else if (e.target === fMessage) {
+            checkMessage()
+        }
+        else {
+            checkPhone()
+        }
+    }
+
+    const checkFinal = (e) => {
+
+        checkName()
+        checkEmail()
+        checkMessage()
+        checkPhone()
+        e.preventDefault()
+        const formData = new FormData(mainForm)
+        formData.append('user_num', '55')
+        for (let [key, value] of formData) {
+            console.log(key, value)
+        }
+
+    }
+
+
+    mainForm.addEventListener('focusout', checkField)
+    mainForm.addEventListener('submit', checkFinal)
 </script>
 </body>
 </html>
