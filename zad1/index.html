@@ -1,12 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
 </head>
 <body>
-$END$
+<div class="slider">
+    <div class="sliderContainer">
+        <a class="btn Prev"> < </a>
+        <div class="sliderWindow">
+            <div class="imgContainer">
+                <img src="images/img_4.png" alt="img5">
+                <img src="images/img.png" alt="img1">
+                <img src="images/img_1.png" alt="img2">
+                <img src="images/img_2.png" alt="img3">
+                <img src="images/img_3.png" alt="img4">
+                <img src="images/img_4.png" alt="img5">
+                <img src="images/img.png" alt="img1">
+            </div>
+        </div>
+        <a class="btn Next"> > </a>
+    </div>
+    <div class="dotsContainer">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
 </body>
+<script>
+    const imgList = document.querySelectorAll('img');
+    const imgContain = document.querySelector('.imgContainer');
+    const btnPrev = document.querySelector('.Prev');
+    const btnNext = document.querySelector('.Next');
+    const dots = document.querySelectorAll('.dotsContainer>span')
+    const containerWidth = 600
+    let currentSlide = 1;
+
+    const changeDots = () => {
+        dots.forEach(dot => {
+            dot.style.backgroundColor = 'grey';
+        });
+        dots[currentSlide-1].style.backgroundColor = 'blue';
+    }
+
+    const updateSlide = () => {
+        imgContain.style.transform = `translateX(-${currentSlide * containerWidth}px)`;
+        changeDots()
+    }
+    updateSlide()
+    const showPrevImg = () => {
+        if (currentSlide > 1) {
+            currentSlide--
+            imgContain.style.transition = '1s';
+        }
+        else{
+            imgContain.style.transition = 'none';
+            currentSlide = imgList.length-1
+
+        }
+        updateSlide()
+    }
+
+    const showNextImg = () => {
+        if (currentSlide < imgList.length -2) {
+            currentSlide++;
+            imgContain.style.transition = '1s';
+        }
+        else{
+            imgContain.style.transition = 'none';
+            currentSlide = 0
+        }
+        updateSlide()
+    }
+    btnPrev.addEventListener('click', showPrevImg)
+    btnNext.addEventListener('click', showNextImg)
+</script>
 </html>

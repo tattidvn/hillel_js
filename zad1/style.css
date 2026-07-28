@@ -1,0 +1,45 @@
+.slider .sliderContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.slider .sliderContainer .sliderWindow {
+  overflow: hidden;
+  max-width: 600px;
+  max-height: 700px;
+}
+.slider .sliderContainer .sliderWindow .imgContainer {
+  display: flex;
+  transition: 2s;
+}
+.slider .sliderContainer .sliderWindow .imgContainer img {
+  max-width: 100%;
+}
+.slider .sliderContainer .btn {
+  background-color: dodgerblue;
+  border-radius: 360px;
+  padding: 5px 10px;
+  color: white;
+  transition: 1s;
+  cursor: pointer;
+}
+.slider .sliderContainer .btn:hover {
+  background-color: blue;
+}
+.slider .dotsContainer {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.slider .dotsContainer :first-child {
+  background-color: blue;
+}
+.slider .dotsContainer span {
+  background-color: gray;
+  padding: 5px;
+  border-radius: 360px;
+}
+
+/*# sourceMappingURL=style.css.map */

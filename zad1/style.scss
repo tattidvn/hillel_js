@@ -1,0 +1,53 @@
+.slider {
+  .sliderContainer {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+
+    .sliderWindow {
+      overflow: hidden;
+      max-width: 600px;
+      max-height: 700px;
+
+      .imgContainer {
+        display: flex;
+        transition: 2s;
+
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .btn {
+      background-color: dodgerblue;
+      border-radius: 360px;
+      padding: 5px 10px;
+      color: white;
+      transition: 1s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: blue;
+    }
+  }
+
+  .dotsContainer {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    :first-child{
+      background-color: blue;
+    }
+
+    span {
+      background-color: gray;
+      padding: 5px;
+      border-radius: 360px;
+
+    }
+  }
+}
