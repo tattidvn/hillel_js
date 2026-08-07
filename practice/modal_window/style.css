@@ -1,0 +1,38 @@
+body .modal_bcground {
+  z-index: 1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  right: 0;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+body .modal_bcground .modal_window_container {
+  width: 25%;
+  box-shadow: 0 4px 10px gray;
+}
+body .modal_bcground .modal_window_container .header_footer {
+  background-color: chartreuse;
+  color: white;
+  font-size: large;
+  padding: 2px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+body .modal_bcground .modal_window_container .header_footer .close {
+  margin-top: 10px;
+  cursor: pointer;
+}
+body .modal_bcground .modal_window_container article {
+  padding: 2px 15px;
+  background-color: white;
+}
+body .disappear {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

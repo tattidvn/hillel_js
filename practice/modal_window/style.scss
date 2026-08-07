@@ -1,0 +1,44 @@
+body{
+
+  .modal_bcground{
+    z-index: 1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.65);
+
+    .modal_window_container{
+      width: 25%;
+      box-shadow: 0 4px 10px gray;
+
+      .header_footer{
+        background-color: chartreuse;
+        color: white;
+        font-size: large;
+        padding: 2px 15px;
+        display: flex;
+        justify-content: space-between;
+        .close{
+          margin-top: 10px ;
+          cursor: pointer;
+        }
+      }
+
+      article{
+        padding: 2px 15px;
+        background-color: white;
+      }
+    }
+  }
+
+  .disappear{
+    display: none;
+  }
+
+}
