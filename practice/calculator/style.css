@@ -1,0 +1,40 @@
+body {
+  width: 100vw;
+}
+body .calc {
+  padding-top: 25vh;
+}
+body .calc .textField {
+  background-color: darkslategray;
+  height: 50px;
+  color: white;
+  font-size: x-large;
+  text-align: center;
+}
+body .calc table {
+  margin: auto;
+}
+body .calc table tr button {
+  width: 50px;
+  height: 50px;
+  background-color: darkslategrey;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: 1s;
+}
+body .calc table tr button:hover {
+  background-color: black;
+}
+body .calc table tr .digit {
+  background-color: orange;
+  transition: 1s;
+}
+body .calc table tr .digit:hover {
+  background-color: orangered;
+}
+body .calc table tr .botom_button {
+  width: 104px;
+}
+
+/*# sourceMappingURL=style.css.map */

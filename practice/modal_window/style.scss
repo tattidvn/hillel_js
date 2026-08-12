@@ -8,14 +8,16 @@ body{
     right: 0;
     left: 0;
     top: 0;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.65);
+    cursor: pointer;
 
     .modal_window_container{
       width: 25%;
       box-shadow: 0 4px 10px gray;
+      cursor: auto;
 
       .header_footer{
         background-color: chartreuse;
@@ -36,9 +38,4 @@ body{
       }
     }
   }
-
-  .disappear{
-    display: none;
-  }
-
 }

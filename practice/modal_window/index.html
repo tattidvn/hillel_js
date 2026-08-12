@@ -8,23 +8,88 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div>
-    <button>Open Modal</button>
+<div class="container">
+    
 </div>
-<div class="modal_bcground">
-    <div class="modal_window_container">
-        <header class="header_footer">
-            <h2>Modal Header</h2>
-            <a class="close">✖</a>
-        </header>
-        <article>
-            <p>Some text 1 ... </p>
-            <p>Some text 2 ... </p>
-        </article>
-        <footer class="header_footer">
-            <p>Modal footer</p>
-        </footer>
-    </div>
-</div>
+<script>
+    const body = document.querySelector('body')
+    const buttonContainer = document.querySelector('.container')
+
+    class Modal {
+        constructor(id, title, text1, text2, btnText) {
+            this.id = id
+            this.title = title
+            this.text1 = text1
+            this.text2 = text2
+            this.btnText = btnText
+
+            this.renderModal()
+            this.renderButton()
+            this.close()
+        }
+
+        renderModal() {
+            this.mainDiv = document.createElement("div");
+            this.mainDiv.dataset.id = this.id
+            this.mainDiv.classList.add("modal_bcground");
+            const div = document.createElement("div");
+            div.classList.add("modal_window_container");
+            const header = document.createElement("header");
+            header.classList.add("header_footer");
+            const h2 = document.createElement("h2");
+            h2.textContent = this.title;
+            const a = document.createElement("a");
+            a.textContent = '✖'
+            a.classList.add("close");
+            header.append(h2, a);
+            const article = document.createElement("article");
+            const p1 = document.createElement("p");
+            p1.textContent = this.text1;
+            const p2 = document.createElement("p");
+            p2.textContent = this.text2;
+            article.append(p1, p2);
+            const footer = document.createElement("footer");
+            footer.classList.add("header_footer");
+            const p = document.createElement("p");
+            p.textContent = 'Modal footer';
+            footer.append(p)
+            div.append(header, article, footer);
+            this.mainDiv.append(div);
+            body.append(this.mainDiv);
+        }
+
+        renderButton() {
+            const button = document.createElement("button");
+            button.textContent = this.btnText;
+            button.dataset.id = this.id;
+            buttonContainer.append(button);
+        }
+
+        close() {
+            this.mainDiv.addEventListener("click", (e) => {
+                if (e.target.classList.contains("close") || e.target.classList.contains("modal_bcground")) {
+                    this.mainDiv.style.display = "none";
+                }
+            });
+        }
+
+        static show(e) {
+            const btnId = e.target.dataset.id;
+            const modal = document.querySelector(`.modal_bcground[data-id="${btnId}"]`);
+            modal.style.display = "flex";
+        }
+
+    }
+
+    buttonContainer.addEventListener("click", (e) => {
+        if(e.target.tagName === 'BUTTON') {
+            Modal.show(e)
+        }
+
+
+    })
+    const m1 = new Modal(1, '1111', '11111', '11111', 123)
+    const m2 = new Modal(2, '222', '222', '222', 345)
+</script>
 </body>
 </html>

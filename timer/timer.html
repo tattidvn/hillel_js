@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+<div>
+    <span>00:00:00</span>
+    <button class="start">start</button>
+    <button class="stop">stop</button>
+</div>
+<script>
+    const container = document.querySelector('div')
+    const time = document.querySelector('span')
+    let count
+    let counter = 0
+    const timeFormat = (totalSeconds) => {
+        let hours = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
+        let minutes = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
+        let seconds = Math.floor(totalSeconds % 60).toString().padStart(2, '0');
+        return `${hours}:${minutes}:${seconds}`;
+    }
+    container.addEventListener('click', e => {
+        const bntStart = e.target.classList.contains('start')
+        const bntStop = e.target.classList.contains('stop')
+        if (bntStart && !count) {
+            start()
+        } else if (bntStop) {
+            stop()
+        }
+    })
+    function start() {
+        count = setInterval(() => {
+            time.textContent = timeFormat(counter)
+            counter++
+        }, 22)
+    }
+    function stop() {
+        clearInterval(count)
+        time.textContent = timeFormat(counter)
+        counter = 0
+        count = undefined
+    }
+</script>
+</body>
+</html>

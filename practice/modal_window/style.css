@@ -6,14 +6,16 @@ body .modal_bcground {
   right: 0;
   left: 0;
   top: 0;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.65);
+  cursor: pointer;
 }
 body .modal_bcground .modal_window_container {
   width: 25%;
   box-shadow: 0 4px 10px gray;
+  cursor: auto;
 }
 body .modal_bcground .modal_window_container .header_footer {
   background-color: chartreuse;
@@ -30,9 +32,6 @@ body .modal_bcground .modal_window_container .header_footer .close {
 body .modal_bcground .modal_window_container article {
   padding: 2px 15px;
   background-color: white;
-}
-body .disappear {
-  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
