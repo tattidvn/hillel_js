@@ -1,0 +1,57 @@
+body .container {
+  margin: auto;
+  background: #0e1099;
+  background: linear-gradient(215deg, rgb(14, 16, 153) 0%, rgb(45, 166, 253) 100%);
+  width: 320px;
+  color: white;
+  padding: 10px;
+  display: flex;
+}
+body .container p,
+body .container span {
+  font-family: "Roboto", "Roboto Thin", sans-serif;
+  font-weight: 300;
+  margin: 5px;
+}
+body .container .weather {
+  font-size: 16px;
+  font-weight: 400 !important;
+}
+body .container .currentData {
+  font-size: 24px;
+}
+body .container .currentTime span:nth-child(1) {
+  font-size: 40px;
+  margin: 5px;
+}
+body .container .currentTime span:nth-child(2) {
+  font-size: 22px;
+  margin: 15px 0 0 0;
+}
+body .container .degree {
+  font-weight: 500;
+  font-size: 22px;
+}
+body .container .left_side .currentTime {
+  display: flex;
+}
+body .container .left_side p:last-child {
+  margin-top: 22px;
+}
+body .container .right_side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .right_side button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+body .container .right_side button:hover {
+  transform: rotate(360deg);
+}
+
+/*# sourceMappingURL=style.css.map */
