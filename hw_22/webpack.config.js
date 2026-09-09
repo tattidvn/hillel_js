@@ -6,7 +6,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'), // куда складывать готовый проект
         filename: 'bundle.js',
-        clean: true, // очищает папочку dist перед каждой новой сборкой
+        clean: true, // очищает папку dist перед каждой новой сборкой
     },
     devServer: {
         static: './dist',

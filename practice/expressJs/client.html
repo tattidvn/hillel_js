@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+<form action="" method="post">
+    <input name="UserName" type="text" placeholder="name">
+    <input id='sub' type="submit">
+</form>
+<button id="add" style="margin-top: 15px ">See all users</button>
+
+<div></div>
+
+<script>
+    const btnSeeList = document.querySelector("button")
+    const form = document.querySelector('form')
+    const Div = document.querySelector('div')
+    btnSeeList.addEventListener("click", seeUsers)
+
+    async function seeUsers() {
+        const responce = await fetch('http://localhost:3000/usersList')
+        const TextDate = await responce.json()
+        TextDate.forEach((item) => {
+            const user = document.createElement('p')
+            user.textContent = `${item.id}: ${item.name} ;`
+            Div.append(user)
+        })
+    }
+
+    form.addEventListener('submit', addUser)
+    function addUser(e) {
+        e.preventDefault()
+        const data = new FormData(form)
+        fetch('http://localhost:3000/usersList', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: Date.now(),
+                name: data.get('UserName'),
+            }),
+        })
+    }
+
+
+</script>
+</body>
+</html>
