@@ -1,0 +1,49 @@
+.inform{
+    max-width: 1200px;
+    justify-self: center;
+}
+
+.info-col h4{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #e2e2e2;
+    margin-bottom: 16px;
+}
+
+.info-col p{
+    font-size: 15px;
+    color: #b9bec7;
+}
+
+.info-col a{
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+.created-by{
+    border-top: 1px solid #272626;
+    color: #b9bec7;
+}
+
+.buttons a:first-of-type{
+    background: #000;
+    color: white !important;
+    border-radius: 15px;
+    padding: 2px 16px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttons a:last-of-type{
+    background: #efe6e6;
+    border-radius: 8px;
+    padding: 2px 16px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
