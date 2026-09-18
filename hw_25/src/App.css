@@ -1,0 +1,106 @@
+.emojies{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.emj-1 span:before{
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("./images/emoji-angry.svg");
+  margin-right: 7px;
+  cursor: pointer;
+}
+.emj-1 span:hover::before {
+  background-image: url("./images/emoji-angry-fill.svg");
+}
+
+.emj-2 span:before{
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("./images/emoji-dizzy.svg");
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.emj-2 span:hover::before {
+  background-image: url("./images/emoji-dizzy-fill.svg");
+}
+
+.emj-3 span:before{
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("./images/emoji-grin.svg");
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.emj-3 span:hover::before {
+  background-image: url("./images/emoji-grin-fill.svg");
+}
+
+
+.emj-4 span:before{
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("./images/emoji-heart-eyes.svg");
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.emj-4 span:hover::before {
+  background-image: url("./images/emoji-heart-eyes-fill.svg");
+}
+
+.emj-5 span:before{
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("./images/emoji-sunglasses.svg");
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.emj-5 span:hover::before {
+  background-image: url("./images/emoji-sunglasses-fill.svg");
+}
+
+button{
+  border: none;
+  background-color: #077f3e;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button:hover{
+  background-color: #019a01;
+}
+
+.del{
+  border: none;
+  background-color: #b61b05;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.del:hover{
+  background-color: #7a352c;
+}
+
+.resImg{
+  width: 50px;
+  height: 50px;
+  margin: auto;
+}
